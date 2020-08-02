@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/65dbb7075c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="weather-app">
+      <div class="container">
+        <!-- The whole app is made with rows and collumns using Bootstrap -->
+
+        <!-- Here starts the search box -->
+
+        <form class="search-box" id="city-search">
+          <input
+            type="search"
+            placeholder="Enter your city"
+            class="form-control"
+            id="city-input"
+          />
+          <input type="submit" value="Search" class="btn btn-success" />
+          <button class="btn btn-success" id="current-location-search">
+            Current 📍
+          </button>
+        </form>
+
+        <!-- Here starts the temperature display box. The pictures are obtained from fontawesome.com -->
+
+        <div class="temp-position">
+          <div class="temp-pic">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <div class="temp-num" id="temperature"></div>
+          <div class="temp">
+            <span class="celsius">
+              <a href="#" id="celsius-link">
+                °C
+              </a>
+            </span>
+            <span>
+              |
+            </span>
+            <span>
+              <a href="#" id="fahrenheit-link">
+                °F
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Here starts todays date element -->
+        <div class="weather-description" id="description">
+          <span lass="date-today">
+            <div class="city" id="search-query"></div>
+            <div class="date">
+              Monday 11:24
+            </div>
+            <div class="humidity">Humidity:<span id="humidity"></span></div>
+            <div>Wind: <span id="wind"></span></div>
+          </span>
+        </div>
+
+        <!-- The beginning of weekdays elements on the app. Should change the layout! -->
+        <div class="bottom-forecast">
+          <!-- The days of weeks -->
+          <div class="row">
+            <div class="col">
+              Mon
+            </div>
+            <div class="col">
+              Tue
+            </div>
+            <div class="col">
+              Wed
+            </div>
+            <div class="col">
+              Thu
+            </div>
+            <div class="col">
+              Fri
+            </div>
+          </div>
+          <!-- Weather icons -->
+          <div class="row" width="300" class="icons">
+            <div class="col">
+              <i class="fas fa-cloud-sun-rain"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-showers-heavy"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+          </div>
+          <!-- Temperature display -->
+          <div class="row" width="300">
+            <div class="col">20 C°</div>
+            <div class="col">23 C°</div>
+            <div class="col">27 C°</div>
+            <div class="col">18 C°</div>
+            <div class="col">20 C°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
